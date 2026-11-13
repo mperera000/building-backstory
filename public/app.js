@@ -386,14 +386,14 @@ audio.addEventListener("timeupdate", () => {
 
 // the pinned player appears once the story has started and the main Play row is off screen
 const playRowSeen = new IntersectionObserver(([e]) => {
-  const started = Boolean(audioFor) || speechSynthesis?.speaking;
+  const started = Boolean(audioFor) || window.speechSynthesis?.speaking;
   $("#mini-player").hidden = e.isIntersecting || !started || !$("#result").classList.contains("active");
 });
 playRowSeen.observe($(".narrator-row"));
 $("#mini-toggle").addEventListener("click", () => $("#play").click());
 function stopAudio() {
   audio.pause();
-  speechSynthesis?.cancel?.();
+  window.speechSynthesis?.cancel?.();
   setPlaying(false);
 }
 function setPlaying(on, label) {
@@ -409,7 +409,7 @@ audio.addEventListener("ended", () => { setPlaying(false); highlight(-1); });
 
 $("#play").addEventListener("click", async () => {
   if (!current) return;
-  if (!audio.paused || speechSynthesis?.speaking) return stopAudio();
+  if (!audio.paused || window.speechSynthesis?.speaking) return stopAudio();
   if (audioFor === current.building.id && audio.src) {
     audio.play();
     return setPlaying(true);
@@ -428,11 +428,16 @@ $("#play").addEventListener("click", async () => {
     await audio.play();
     setPlaying(true);
   } catch {
+    // some browsers (and test browsers) have no built-in voice at all
+    if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) {
+      setPlaying(false, "Voice unavailable here");
+      return;
+    }
     const u = new SpeechSynthesisUtterance(current.story);
     u.rate = 0.98;
     u.onboundary = (e) => highlight(sentenceAtChar(e.charIndex));
     u.onend = () => { setPlaying(false); highlight(-1); };
-    speechSynthesis.speak(u);
+    window.speechSynthesis.speak(u);
     setPlaying(true);
   } finally {
     $("#play").disabled = false;

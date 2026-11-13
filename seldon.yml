@@ -1,0 +1,52 @@
+# seldon.yml — your project's QA baseline, as code (schema v1).
+# Each test case is plain English: a name, ordered steps, and ONE acceptance criterion the run is
+# judged against. Add cases with `seldon cases add` (or the MCP add_test_case tool), or edit here:
+#
+#   testCases:
+#     - name: Login works
+#       steps:
+#         - go to /login
+#         - enter valid credentials and submit
+#       criteria: the user lands on the dashboard
+#
+# Tips: one behavior per case; keep steps concrete and ordered; criteria is a single pass/fail check.
+# Optional per-case keys: id (stable slug), url (path/absolute override), only: true, skip: true,
+# area (report grouping label, e.g. fe/auth — "/" nests it, e.g. `seldon report` shows fe > auth).
+#
+# Optional login (for apps that gate behind sign-in) — add under run:. Committed like a .env value
+# (fine for staging/dev; use a managed secret for production). The QA agent signs in before testing.
+#   run:
+#     url: https://staging.example.com
+#     username: qa@example.com
+#     password: hunter2
+version: 1
+testCases:
+  - name: Demo story shows fact-checked claims
+    steps:
+      - open the home page
+      - tap the 'Palace Hotel' chip under the hill illustration
+      - wait up to 60 seconds for the story screen
+    criteria: the story screen shows the name Palace Hotel, a written story, and a list of claims each stamped Verified, Disputed or Legend
+  - name: Claims link to their sources
+    steps:
+      - open the home page
+      - tap the 'Ferry Building' chip
+      - wait for the story screen
+      - expand the 'Why' details on the first claim
+    criteria: at least one source link with a short explanation appears under the claim, and a sources list is shown on the page
+  - name: Narration plays and back to the street works
+    steps:
+      - open the home page
+      - tap the 'Old Mint' chip
+      - wait for the story screen
+      - tap 'Play the story'
+      - wait 15 seconds
+      - tap 'Back to the street'
+    criteria: after tapping play the button changes to a playing/pause state (or a loading label then playing), and Back to the street returns to the home hill screen with no error message
+  - name: Every demo building opens
+    steps:
+      - open the home page
+      - tap each of the five building chips in turn (Palace Hotel, Ferry Building, Old Mint, Flood Building, Transamerica Pyramid), returning home with 'Back to the street' after each
+    criteria: each chip opens a story screen with that building's name and stamped claims, and no error toast appears
+run:
+  url: https://building-backstory-9pbmr.ondigitalocean.app
