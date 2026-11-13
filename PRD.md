@@ -1,4 +1,4 @@
-# Building Backstory — PRD
+# Backstory — PRD
 
 ## Problem
 You walk past a beautiful old building in San Francisco and wonder what happened there. Search gives you ten tabs, half of them repeating myths. Tour apps are scripted and don't cover the building in front of you.

@@ -1,4 +1,4 @@
-// Building Backstory server: static phone app + JSON API. Runs on DigitalOcean App Platform (or locally).
+// Backstory server: static phone app + JSON API. Runs on DigitalOcean App Platform (or locally).
 import "./lib/instrument.js";
 import * as Sentry from "@sentry/node";
 import { createServer } from "node:http";
@@ -88,4 +88,4 @@ const server = createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => console.log(`Building Backstory on http://localhost:${PORT}`));
+server.listen(PORT, () => console.log(`Backstory on http://localhost:${PORT}`));

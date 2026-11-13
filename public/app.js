@@ -1,4 +1,4 @@
-// Building Backstory phone app.
+// Backstory phone app.
 import { LOOKS, guide, GUIDE_FILTERS, BUBBLE } from "/guide.js";
 const $ = (s) => document.querySelector(s);
 

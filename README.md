@@ -1,4 +1,4 @@
-# Building Backstory
+# Backstory
 
 **Point your phone at a San Francisco building. Hear what really happened there, with every claim stamped Verified, Disputed or Legend.**
 

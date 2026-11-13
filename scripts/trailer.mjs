@@ -122,7 +122,7 @@ const html = `<!doctype html>
   ${cards}
   <section id="outro" class="clip scene" data-start="${(total - OUTRO).toFixed(2)}" data-duration="${OUTRO}" data-track-index="2">
     <p class="kicker">Truth or Legend</p>
-    <p class="brand">Building<br><em>Backstory</em></p>
+    <p class="brand"><em>Backstory</em></p>
     <div class="tally">
       <div style="color:var(--verified)">${tally.verified ?? 0} Verified</div>
       <div style="color:var(--disputed)">${tally.disputed ?? 0} Disputed</div>
