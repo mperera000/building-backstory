@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Geist+Mono:wght@500;700&family=Young+Serif&family=Patrick+Hand&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+  /* Building Backstory design tokens: the one source of truth for color, type, radius and motion.
+   Loaded by the app (index.html) and inlined into the HyperFrames trailer (scripts/trailer.mjs).
+   Dark-mode overrides live in styles.css. */
+:root {
+  --sky-top: #c6d1d7;
+  --sky-bottom: #e8e6df;
+  --surface: #f7f5ef;
+  --card: #fbfaf6;
+  --ink: #1f1d1a;
+  --ink-2: #45484a;
+  --muted: #6d7173;
+  --rule: rgba(31, 29, 26, 0.16);
+  --accent: #c0362c;
+  --title-accent: #3f5b78;
+  --swash: rgba(242, 196, 90, 0.72); /* ochre watercolor stroke under the title */ /* slate blue, from the windows and the blue house */
+  --accent-ink: #fffdf8;
+  --ink-line: #1f1d1a;
+
+  /* scene */
+  --bridge: #c0362c;
+  --fog: #f7f8f6;
+  --hill: #cdbfa6;
+  --blue: #8fb0c8;
+  --yellow: #e9c66b;
+  --pink: #e6a2ab;
+  --trim: #f4ebd3;
+  --win: #465d73;
+  --sign: #f4ebd3;
+  --door2: #3d4f63;
+  --door3: #7a3b46;
+  --step: #c9c1b3;
+  --leaf: #6f8f4a;
+  --tag: #fbfaf6;
+
+  --verified: #2f6b4f;
+  --disputed: #9a5f0c;
+  --legend: #2d5a8c;
+  --shadow: 0 1px 0 rgba(40, 50, 60, 0.05), 0 14px 30px -20px rgba(40, 55, 70, 0.45);
+  --sans: "Geist", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+  --sign-font: "Young Serif", Georgia, serif;
+  --hand: "Reenie Beanie", cursive;
+  --hand-read: "Patrick Hand", "Comic Neue", cursive;
+
+  /* type scale */
+  --fs-xs: 12px; --fs-sm: 13px; --fs-md: 15px; --fs-body: 16px; --fs-lg: 17px; --fs-xl: 20px; --fs-2xl: 22px; --fs-3xl: 28px; --fs-display: 32px;
+  /* corner radius */
+  --r-sm: 4px; --r-md: 14px; --r-pill: 999px;
+  /* motion */
+  --dur-fast: 0.15s; --dur: 0.3s; --dur-slow: 0.7s; --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  /* ink that stays dark in both themes (text on paper signs and bubbles) */
+  --ink-on-paper: #1f1d1a;
+}
+
+  :root { --paper: var(--sky-bottom); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--paper); }
+  #root { position: relative; width: 100%; height: 100%; color: var(--ink); font-family: "Geist", system-ui, sans-serif; isolation: isolate;
+          background: linear-gradient(var(--sky-top), var(--sky-bottom) 55%); }
+  .scene { position: absolute; inset: 0; padding: 140px 96px; display: flex; flex-direction: column; justify-content: center; }
+  .kicker, .num, .src, .year, .foot { font-family: "Geist Mono", monospace; letter-spacing: .14em; text-transform: uppercase; }
+  .kicker { color: var(--accent); font-size: 34px; font-weight: 700; margin-bottom: 36px; }
+  h1 { font-family: "Young Serif", Georgia, serif; font-size: 140px; line-height: 1; font-weight: 400; }
+  .built { margin-top: 40px; font-size: 48px; font-weight: 600; color: var(--ink-2); }
+  .hook { margin-top: 24px; font-family: "Patrick Hand", cursive; font-size: 56px; line-height: 1.3; color: var(--ink-2); }
+  .claim { justify-content: center; }
+  .num { font-size: 30px; color: var(--muted); margin-bottom: 30px; }
+  .year { font-size: 56px; font-weight: 700; color: var(--accent); margin-bottom: 20px; letter-spacing: .06em; }
+  .text { font-size: 76px; line-height: 1.18; font-weight: 400; }
+  .src { margin-top: 48px; font-size: 26px; color: var(--muted); letter-spacing: .06em; text-transform: none; }
+  .stamp { position: absolute; right: 96px; bottom: 260px; font-family: "Geist Mono", monospace; font-weight: 700; font-size: 64px;
+           letter-spacing: .14em; text-transform: uppercase; padding: 20px 30px; border: 8px solid currentColor; border-radius: 12px; }
+  .stamp.verified { color: var(--verified); } .stamp.disputed { color: var(--disputed); } .stamp.legend { color: var(--legend); }
+  .tally { display: grid; gap: 28px; margin: 60px 0 0; }
+  .tally div { font-family: "Geist Mono", monospace; font-size: 48px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .brand { font-family: "Young Serif", Georgia, serif; font-size: 120px; line-height: 1; font-weight: 400; }
+  .brand em { font-style: normal; color: var(--title-accent); }
+  .foot { position: absolute; left: 96px; right: 96px; bottom: 120px; font-size: 24px; color: var(--muted); letter-spacing: .08em; text-transform: none; }
+  #intro { justify-content: flex-start; padding-top: 220px; }
+  .host { position: absolute; }
+  .host-intro { right: 40px; bottom: 0; width: 520px; }
+  .host-outro { right: 70px; bottom: 150px; width: 330px; }
+  #outro .foot { right: 440px; }
+  .gk { fill: none; stroke: var(--ink-on-paper); stroke-width: 0.9; stroke-linecap: round; stroke-linejoin: round; filter: url(#ink-fine); }
+  .gw { filter: url(#wash-fine); }
+  .m-open { opacity: 0; }
+  .host-outro .arm-r { transform-box: fill-box; transform-origin: 50% 0%; transform: rotate(-48deg); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <filter id="ink-fine" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.1"/>
+  </filter>
+  <filter id="wash-fine" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="3" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="5" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.5 1.1" result="ga"/>
+    <feComposite in="d" in2="ga" operator="in"/>
+  </filter></defs></svg>
+<div id="root" data-composition-id="main" data-start="0" data-duration="24.5" data-width="1080" data-height="1920">
+  <section id="intro" class="clip scene" data-start="0" data-duration="3.5" data-track-index="0">
+    <p class="kicker">San Francisco</p>
+    <h1>Palace Hotel</h1>
+    <p class="built">Built 1875 (original), 1909 (rebuilt)</p>
+    <p class="hook">Rebuilt after the 1906 fire, this gilded landmark hosted royalty and presidents.</p>
+    <svg class="host host-intro" viewBox="-34 -200 68 104"><g class="guide-bust talk"><path class="gw" d="M-17 -142 Q-20 -96 -23 -44 L23 -44 Q20 -96 17 -142 Q0 -147 -17 -142Z" fill="#ece2cd"/><path class="gk" d="M-17 -142 Q-20 -96 -23 -44 L23 -44 Q20 -96 17 -142 Q0 -147 -17 -142Z"/><path class="gk" d="M0 -136 V-44 M-8 -110 h-6 M8 -110 h6"/><path class="gw" d="M-10 -146 Q0 -138 10 -146 L11 -140 Q0 -132 -11 -140Z M4 -139 L9 -112 L3 -110 L0 -137Z" fill="#8fa47a"/><path class="gk" d="M-10 -146 Q0 -138 10 -146 L11 -140 Q0 -132 -11 -140Z M4 -139 L9 -112 L3 -110 L0 -137Z"/><path class="gw" d="M11.4 -156 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M11.4 -156 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M11.8 -149 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M11.8 -149 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M12.200000000000001 -142 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M12.200000000000001 -142 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M12.6 -135 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M12.6 -135 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M13.000000000000002 -128 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M13.000000000000002 -128 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M13.4 -121 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M13.4 -121 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M13.799999999999999 -114 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M13.799999999999999 -114 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M15.600000000000001 -106 a2 1.6 0 1 0 4 0 a2 1.6 0 1 0 -4 0z" fill="#8fa47a"/><path class="gk" d="M15.600000000000001 -106 a2 1.6 0 1 0 4 0 a2 1.6 0 1 0 -4 0z"/><path class="gw" d="M-4 -153 h8 v12 h-8z" fill="#b77f58"/><path class="gk" d="M-4 -153 h8 v12 h-8z"/><path class="gw" d="M-14.8 -165 a2.4 3.4 0 1 0 4.8 0 a2.4 3.4 0 1 0 -4.8 0z" fill="#b77f58"/><path class="gk" d="M-14.8 -165 a2.4 3.4 0 1 0 4.8 0 a2.4 3.4 0 1 0 -4.8 0z"/><path class="gw" d="M10 -165 a2.4 3.4 0 1 0 4.8 0 a2.4 3.4 0 1 0 -4.8 0z" fill="#b77f58"/><path class="gk" d="M10 -165 a2.4 3.4 0 1 0 4.8 0 a2.4 3.4 0 1 0 -4.8 0z"/><path class="gw" d="M-12.5 -167 a12.5 14.5 0 1 0 25 0 a12.5 14.5 0 1 0 -25 0z" fill="#b77f58"/><path class="gk" d="M-12.5 -167 a12.5 14.5 0 1 0 25 0 a12.5 14.5 0 1 0 -25 0z"/><circle cx="-4.5" cy="-168" r="1.3" fill="#1f1d1a"/><circle cx="4.5" cy="-168" r="1.3" fill="#1f1d1a"/><path class="gk" d="M-7 -172.5 q2.5 -1.5 5 0 M2 -172.5 q2.5 -1.5 5 0 M0.5 -166 q1.6 3 -1.2 3.6"/><circle cx="-7" cy="-161.5" r="2.4" fill="#c4553f" opacity=".18"/><circle cx="7" cy="-161.5" r="2.4" fill="#c4553f" opacity=".18"/><path class="gk m-closed" d="M-3.6 -159 q3.6 2.6 7.2 0"/><path class="m-open" d="M-2.6 -158.6 a2.6 2 0 1 0 5.2 0 a2.6 2 0 1 0 -5.2 0z" fill="#6b2a22"/><circle cx="-12.6" cy="-160" r="1.7" fill="#d4a537"/><circle cx="12.6" cy="-160" r="1.7" fill="#d4a537"/><path class="gw" d="M-13 -166 Q-15 -186 0 -185 Q15 -186 13 -166 Q11 -176 1 -178 Q-9 -177 -13 -166Z" fill="#261a14"/><path class="gk" d="M-13 -166 Q-15 -186 0 -185 Q15 -186 13 -166 Q11 -176 1 -178 Q-9 -177 -13 -166Z"/></g></svg>
+  </section>
+  
+    <section id="claim-0" class="clip scene claim" data-start="3.50" data-duration="3.4" data-track-index="1">
+      <p class="num">Claim 01 / 05</p>
+      <p class="year">1875</p>
+      <p class="text">Upon opening in 1875, the original hotel featured a skylit central courtyard where horse-drawn carriages drove inside to drop off guests.</p>
+      <p class="src">Source: sfpalace.com + 1 more</p>
+      <div class="stamp verified">Verified</div>
+    </section>
+    <section id="claim-1" class="clip scene claim" data-start="6.90" data-duration="3.4" data-track-index="1">
+      <p class="num">Claim 02 / 05</p>
+      <p class="year">1891</p>
+      <p class="text">Hawaiian King David Kalakaua fell into a coma in his Palace Hotel suite and died there in January 1891 after suffering a stroke in Santa Barbara.</p>
+      <p class="src">Source: en.wikipedia.org</p>
+      <div class="stamp verified">Verified</div>
+    </section>
+    <section id="claim-2" class="clip scene claim" data-start="10.30" data-duration="3.4" data-track-index="1">
+      <p class="num">Claim 03 / 05</p>
+      <p class="year">1875</p>
+      <p class="text">Banker William Ralston financed the original hotel and drowned in San Francisco Bay after his bank collapsed two months before the October 1875 opening, leaving partner William Sharon in control.</p>
+      <p class="src">Source: en.wikipedia.org</p>
+      <div class="stamp legend">Legend</div>
+    </section>
+    <section id="claim-3" class="clip scene claim" data-start="13.70" data-duration="3.4" data-track-index="1">
+      <p class="num">Claim 04 / 05</p>
+      <p class="year">1909</p>
+      <p class="text">Maxfield Parrish's painting The Pied Piper was commissioned after the 1906 earthquake and has hung in the hotel's namesake bar since the 1909 reopening.</p>
+      <p class="src">Source: sfpalace.com</p>
+      <div class="stamp verified">Verified</div>
+    </section>
+    <section id="claim-4" class="clip scene claim" data-start="17.10" data-duration="3.4" data-track-index="1">
+      <p class="num">Claim 05 / 05</p>
+      <p class="year">1906</p>
+      <p class="text">Gutted by fire after the 1906 earthquake, the original building was replaced by a new structure that reopened in December 1909, though accounts differ on whether the original superstructure was reused or demolished.</p>
+      <p class="src">Source: sfpalace.com + 1 more</p>
+      <div class="stamp disputed">Disputed</div>
+    </section>
+  <section id="outro" class="clip scene" data-start="20.50" data-duration="4" data-track-index="2">
+    <p class="kicker">Truth or Legend</p>
+    <p class="brand">Building<br><em>Backstory</em></p>
+    <div class="tally">
+      <div style="color:var(--verified)">3 Verified</div>
+      <div style="color:var(--disputed)">2 Disputed</div>
+      <div style="color:var(--legend)">2 Legend</div>
+    </div>
+    <svg class="host host-outro" viewBox="-60 -200 100 206"><g transform="scale(-1 1)"><g class="guide-figure"><g class="bob"><g class="leg leg-l"><path class="gw" d="M-12 -90 L-11 -10 L-3 -10 L-2 -90Z" fill="#3d3a36"/><path class="gk" d="M-12 -90 L-11 -10 L-3 -10 L-2 -90Z"/><path class="gw" d="M-15.5 -6 a7.5 4.6 0 1 0 15 0 a7.5 4.6 0 1 0 -15 0z" fill="#5b3a28"/><path class="gk" d="M-15.5 -6 a7.5 4.6 0 1 0 15 0 a7.5 4.6 0 1 0 -15 0z"/></g><g class="leg leg-r"><path class="gw" d="M2 -90 L3 -10 L11 -10 L12 -90Z" fill="#3d3a36"/><path class="gk" d="M2 -90 L3 -10 L11 -10 L12 -90Z"/><path class="gw" d="M0.5 -6 a7.5 4.6 0 1 0 15 0 a7.5 4.6 0 1 0 -15 0z" fill="#5b3a28"/><path class="gk" d="M0.5 -6 a7.5 4.6 0 1 0 15 0 a7.5 4.6 0 1 0 -15 0z"/></g><g class="arm arm-l"><path class="gw" d="M-17 -141 L-21 -97 L-14 -97 L-11 -138Z" fill="#ece2cd"/><path class="gk" d="M-17 -141 L-21 -97 L-14 -97 L-11 -138Z"/><g transform="rotate(-10 -22 -103)"><path class="gw" d="M-31 -118 h17 v28 h-17z" fill="#f1e8d2"/><path class="gk" d="M-31 -118 h17 v28 h-17z"/><path class="gw" d="M-33 -119 h17 v28 h-17z" fill="#8a3f2a"/><path class="gk" d="M-33 -119 h17 v28 h-17z"/><path class="gk" d="M-15.5 -117 v25 M-14.5 -116 v24" stroke-width=".6"/><path d="M-19 -119 v28" stroke="#2a1d14" stroke-width="1.6"/><path class="gw" d="M-30 -112 h8 v5 h-8z" fill="#efe2c4"/><path class="gk" d="M-30 -112 h8 v5 h-8z"/></g><path class="gw" d="M-21.1 -93 a3.6 3.8 0 1 0 7.2 0 a3.6 3.8 0 1 0 -7.2 0z" fill="#b77f58"/><path class="gk" d="M-21.1 -93 a3.6 3.8 0 1 0 7.2 0 a3.6 3.8 0 1 0 -7.2 0z"/><path class="gw" d="M-23.3 -101 a1.8 2.6 0 1 0 3.6 0 a1.8 2.6 0 1 0 -3.6 0z" fill="#b77f58"/><path class="gk" d="M-23.3 -101 a1.8 2.6 0 1 0 3.6 0 a1.8 2.6 0 1 0 -3.6 0z"/></g><path class="gw" d="M-17 -142 Q-20 -96 -23 -44 L23 -44 Q20 -96 17 -142 Q0 -147 -17 -142Z" fill="#ece2cd"/><path class="gk" d="M-17 -142 Q-20 -96 -23 -44 L23 -44 Q20 -96 17 -142 Q0 -147 -17 -142Z"/><path class="gk" d="M0 -136 V-44 M-8 -110 h-6 M8 -110 h6"/><path class="gw" d="M-10 -146 Q0 -138 10 -146 L11 -140 Q0 -132 -11 -140Z M4 -139 L9 -112 L3 -110 L0 -137Z" fill="#8fa47a"/><path class="gk" d="M-10 -146 Q0 -138 10 -146 L11 -140 Q0 -132 -11 -140Z M4 -139 L9 -112 L3 -110 L0 -137Z"/><g class="arm arm-r"><path class="gw" d="M17 -141 L21 -97 L14 -97 L11 -138Z" fill="#ece2cd"/><path class="gk" d="M17 -141 L21 -97 L14 -97 L11 -138Z"/><path class="gw" d="M13.9 -93 a3.6 3.8 0 1 0 7.2 0 a3.6 3.8 0 1 0 -7.2 0z" fill="#b77f58"/><path class="gk" d="M13.9 -93 a3.6 3.8 0 1 0 7.2 0 a3.6 3.8 0 1 0 -7.2 0z"/></g><path class="gw" d="M11.4 -156 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M11.4 -156 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M11.8 -149 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M11.8 -149 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M12.200000000000001 -142 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M12.200000000000001 -142 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M12.6 -135 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M12.6 -135 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M13.000000000000002 -128 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M13.000000000000002 -128 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M13.4 -121 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M13.4 -121 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M13.799999999999999 -114 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z" fill="#261a14"/><path class="gk" d="M13.799999999999999 -114 a3.6 4.4 0 1 0 7.2 0 a3.6 4.4 0 1 0 -7.2 0z"/><path class="gw" d="M15.600000000000001 -106 a2 1.6 0 1 0 4 0 a2 1.6 0 1 0 -4 0z" fill="#8fa47a"/><path class="gk" d="M15.600000000000001 -106 a2 1.6 0 1 0 4 0 a2 1.6 0 1 0 -4 0z"/><path class="gw" d="M-4 -153 h8 v12 h-8z" fill="#b77f58"/><path class="gk" d="M-4 -153 h8 v12 h-8z"/><path class="gw" d="M-14.8 -165 a2.4 3.4 0 1 0 4.8 0 a2.4 3.4 0 1 0 -4.8 0z" fill="#b77f58"/><path class="gk" d="M-14.8 -165 a2.4 3.4 0 1 0 4.8 0 a2.4 3.4 0 1 0 -4.8 0z"/><path class="gw" d="M10 -165 a2.4 3.4 0 1 0 4.8 0 a2.4 3.4 0 1 0 -4.8 0z" fill="#b77f58"/><path class="gk" d="M10 -165 a2.4 3.4 0 1 0 4.8 0 a2.4 3.4 0 1 0 -4.8 0z"/><path class="gw" d="M-12.5 -167 a12.5 14.5 0 1 0 25 0 a12.5 14.5 0 1 0 -25 0z" fill="#b77f58"/><path class="gk" d="M-12.5 -167 a12.5 14.5 0 1 0 25 0 a12.5 14.5 0 1 0 -25 0z"/><circle cx="-4.5" cy="-168" r="1.3" fill="#1f1d1a"/><circle cx="4.5" cy="-168" r="1.3" fill="#1f1d1a"/><path class="gk" d="M-7 -172.5 q2.5 -1.5 5 0 M2 -172.5 q2.5 -1.5 5 0 M0.5 -166 q1.6 3 -1.2 3.6"/><circle cx="-7" cy="-161.5" r="2.4" fill="#c4553f" opacity=".18"/><circle cx="7" cy="-161.5" r="2.4" fill="#c4553f" opacity=".18"/><path class="gk m-closed" d="M-3.6 -159 q3.6 2.6 7.2 0"/><path class="m-open" d="M-2.6 -158.6 a2.6 2 0 1 0 5.2 0 a2.6 2 0 1 0 -5.2 0z" fill="#6b2a22"/><circle cx="-12.6" cy="-160" r="1.7" fill="#d4a537"/><circle cx="12.6" cy="-160" r="1.7" fill="#d4a537"/><path class="gw" d="M-13 -166 Q-15 -186 0 -185 Q15 -186 13 -166 Q11 -176 1 -178 Q-9 -177 -13 -166Z" fill="#261a14"/><path class="gk" d="M-13 -166 Q-15 -186 0 -185 Q15 -186 13 -166 Q11 -176 1 -178 Q-9 -177 -13 -166Z"/></g></g></g></svg>
+    <p class="foot">Research by Bright Data. Verdicts by TypeSafe Jev. Story by Gemini.</p>
+  </section>
+</div>
+<script>
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo("#intro .kicker", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, 0.1);
+  tl.fromTo("#intro h1", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.3);
+  tl.fromTo("#intro .built, #intro .hook", { opacity: 0 }, { opacity: 1, duration: 0.6, stagger: 0.3 }, 1.0);
+  tl.fromTo("#intro .host", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.4);
+  
+      tl.fromTo("#claim-0 .text", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 3.50);
+      tl.fromTo("#claim-0 .num, #claim-0 .year, #claim-0 .src", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 3.50);
+      tl.fromTo("#claim-0 .stamp", { opacity: 0, scale: 2.4, rotate: -14 }, { opacity: 0.94, scale: 1, rotate: -8, duration: 0.32, ease: "back.out(2.2)" }, 4.60);
+      tl.fromTo("#claim-1 .text", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 6.90);
+      tl.fromTo("#claim-1 .num, #claim-1 .year, #claim-1 .src", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 6.90);
+      tl.fromTo("#claim-1 .stamp", { opacity: 0, scale: 2.4, rotate: -14 }, { opacity: 0.94, scale: 1, rotate: -8, duration: 0.32, ease: "back.out(2.2)" }, 8.00);
+      tl.fromTo("#claim-2 .text", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 10.30);
+      tl.fromTo("#claim-2 .num, #claim-2 .year, #claim-2 .src", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 10.30);
+      tl.fromTo("#claim-2 .stamp", { opacity: 0, scale: 2.4, rotate: -14 }, { opacity: 0.94, scale: 1, rotate: -8, duration: 0.32, ease: "back.out(2.2)" }, 11.40);
+      tl.fromTo("#claim-3 .text", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 13.70);
+      tl.fromTo("#claim-3 .num, #claim-3 .year, #claim-3 .src", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 13.70);
+      tl.fromTo("#claim-3 .stamp", { opacity: 0, scale: 2.4, rotate: -14 }, { opacity: 0.94, scale: 1, rotate: -8, duration: 0.32, ease: "back.out(2.2)" }, 14.80);
+      tl.fromTo("#claim-4 .text", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 17.10);
+      tl.fromTo("#claim-4 .num, #claim-4 .year, #claim-4 .src", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 17.10);
+      tl.fromTo("#claim-4 .stamp", { opacity: 0, scale: 2.4, rotate: -14 }, { opacity: 0.94, scale: 1, rotate: -8, duration: 0.32, ease: "back.out(2.2)" }, 18.20);
+  tl.fromTo("#outro .brand", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 20.60);
+  tl.fromTo("#outro .host", { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 20.70);
+  tl.fromTo("#outro .tally div", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.25 }, 21.20);
+  window.__timelines["main"] = tl;
+  tl.seek(0);
+</script>
+</body>
+</html>

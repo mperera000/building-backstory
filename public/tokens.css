@@ -1,0 +1,53 @@
+/* Building Backstory design tokens: the one source of truth for color, type, radius and motion.
+   Loaded by the app (index.html) and inlined into the HyperFrames trailer (scripts/trailer.mjs).
+   Dark-mode overrides live in styles.css. */
+:root {
+  --sky-top: #c6d1d7;
+  --sky-bottom: #e8e6df;
+  --surface: #f7f5ef;
+  --card: #fbfaf6;
+  --ink: #1f1d1a;
+  --ink-2: #45484a;
+  --muted: #6d7173;
+  --rule: rgba(31, 29, 26, 0.16);
+  --accent: #c0362c;
+  --title-accent: #3f5b78;
+  --swash: rgba(242, 196, 90, 0.72); /* ochre watercolor stroke under the title */ /* slate blue, from the windows and the blue house */
+  --accent-ink: #fffdf8;
+  --ink-line: #1f1d1a;
+
+  /* scene */
+  --bridge: #c0362c;
+  --fog: #f7f8f6;
+  --hill: #cdbfa6;
+  --blue: #8fb0c8;
+  --yellow: #e9c66b;
+  --pink: #e6a2ab;
+  --trim: #f4ebd3;
+  --win: #465d73;
+  --sign: #f4ebd3;
+  --door2: #3d4f63;
+  --door3: #7a3b46;
+  --step: #c9c1b3;
+  --leaf: #6f8f4a;
+  --tag: #fbfaf6;
+
+  --verified: #2f6b4f;
+  --disputed: #9a5f0c;
+  --legend: #2d5a8c;
+  --shadow: 0 1px 0 rgba(40, 50, 60, 0.05), 0 14px 30px -20px rgba(40, 55, 70, 0.45);
+  --sans: "Geist", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, monospace;
+  --sign-font: "Young Serif", Georgia, serif;
+  --hand: "Reenie Beanie", cursive;
+  --hand-read: "Patrick Hand", "Comic Neue", cursive;
+
+  /* type scale */
+  --fs-xs: 12px; --fs-sm: 13px; --fs-md: 15px; --fs-body: 16px; --fs-lg: 17px; --fs-xl: 20px; --fs-2xl: 22px; --fs-3xl: 28px; --fs-display: 32px;
+  /* corner radius */
+  --r-sm: 4px; --r-md: 14px; --r-pill: 999px;
+  /* motion */
+  --dur-fast: 0.15s; --dur: 0.3s; --dur-slow: 0.7s; --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  /* ink that stays dark in both themes (text on paper signs and bubbles) */
+  --ink-on-paper: #1f1d1a;
+}

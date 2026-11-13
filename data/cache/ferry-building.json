@@ -1,0 +1,176 @@
+{
+  "building": {
+    "id": "ferry-building",
+    "name": "San Francisco Ferry Building",
+    "address": "1 Ferry Building, San Francisco"
+  },
+  "built": "1892-1898",
+  "architect": "A. Page Brown",
+  "hook": "San Francisco's 1898 ferry gateway survived major earthquakes, becoming a waterfront marketplace.",
+  "claims": [
+    {
+      "id": "c0",
+      "text": "When the Beaux-Arts terminal opened on July 13, 1898, it replaced an 1875 wooden predecessor and stood as San Francisco's largest project to date.",
+      "year": "1898",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "ferrybuildingmarketplace.com",
+          "url": "https://www.ferrybuildingmarketplace.com/about/",
+          "says": "Reports the Ferry Building initially opened on July 13, 1898, functioning as a major transit hub."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
+          "says": "States it opened July 13, 1898, replacing an 1875 wooden structure as the city's largest project."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c1",
+      "text": "Architect A. Page Brown drafted the terminal in 1892 and is thought to have modeled its 245-foot clock tower on Seville's historic Giralda bell tower in Spain.",
+      "year": "1892",
+      "kind": "anecdote",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
+          "says": "Notes architect A. Page Brown designed it in 1892, possibly inspired by Seville's Giralda bell tower."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c2",
+      "text": "During the 1940s, a large pedestrian bridge that carried travelers safely across the busy transit plaza in front of the building was dismantled for World War II scrap metal.",
+      "year": "1940s",
+      "kind": "anecdote",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
+          "says": "Explains a busy plaza pedestrian bridge was taken down in the 1940s for wartime scrap metal."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c3",
+      "text": "As bridge openings and automobile travel eroded ferry commuting in the 1950s, much of the building's historic interior was lost when it was converted into standard offices in 1955.",
+      "year": "1955",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "ferrybuildingmarketplace.com",
+          "url": "https://www.ferrybuildingmarketplace.com/about/",
+          "says": "Says diminished 1950s ridership led to converting much of the historic interior into offices in 1955."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
+          "says": "Notes declining use since the 1950s prompted dividing public areas and adapting it for office use."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c4",
+      "text": "The reinforced structure endured both the 1906 and 1989 earthquakes with minimal damage, while the 1989 quake crippled the elevated Embarcadero Freeway and led to its demolition.",
+      "year": "1989",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "ferrybuildingmarketplace.com",
+          "url": "https://www.ferrybuildingmarketplace.com/about/",
+          "says": "Explains the 1989 quake damaged the Embarcadero Freeway, causing its demolition after shadowing it for 35 years."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
+          "says": "Reports the reinforced building endured both the 1906 and 1989 earthquakes with very minimal structural damage."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c5",
+      "text": "Following the waterfront's redevelopment, a major restoration revived the 660-foot Great Nave and transformed the ground level into the Ferry Building Marketplace.",
+      "year": "2003",
+      "kind": "fact",
+      "conflict": true,
+      "evidence": [
+        {
+          "source": "ferrybuildingmarketplace.com",
+          "url": "https://www.ferrybuildingmarketplace.com/about/",
+          "says": "States it reopened in 2003 after a four-year restoration transforming the 660-foot nave into a marketplace."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
+          "says": "Says a restoration began in 2002, reviving the 660-foot Great Nave and adding a ground-floor marketplace."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c6",
+      "text": "To celebrate the landmark's 125th anniversary in 2023, San Francisco officially designated July 13 as an annual Ferry Building Day.",
+      "year": "2023",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "ferrybuildingmarketplace.com",
+          "url": "https://www.ferrybuildingmarketplace.com/about/",
+          "says": "Notes San Francisco celebrated its 125th anniversary in 2023 and officially declared July 13 Ferry Building Day."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c7",
+      "text": "In 2024, crews wrapped up a four-year preservation project that repaired the facade and coated the exterior in a custom paint called Ferry Building Gray to match its original sandstone.",
+      "year": "2024",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "ferrybuildingmarketplace.com",
+          "url": "https://www.ferrybuildingmarketplace.com/about/",
+          "says": "Reports a four-year facade restoration finished in 2024, repainting the exterior in custom Ferry Building Gray."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    }
+  ],
+  "story": "Look up at that 245-foot clock tower, drafted in 1892 by architect A. Page Brown and thought to be modeled on Seville's Giralda bell tower in Spain. When this Beaux-Arts terminal opened on July 13, 1898, it replaced an 1875 wooden predecessor as San Francisco's largest project to date. Right before you, a pedestrian bridge once crossed the busy plaza until its 1940s dismantling for World War II scrap metal. As bridge openings and cars eroded ferry commuting, much of the historic interior was lost in a 1955 office conversion. Still, the reinforced structure endured the 1906 and 1989 earthquakes with minimal damage, while the 1989 quake crippled the Embarcadero Freeway, leading to its demolition. Later, a restoration revived the 660-foot Great Nave into the Ferry Building Marketplace. San Francisco named July 13 Ferry Building Day in 2023, and in 2024 crews coated the repaired facade in Ferry Building Gray to match its original sandstone.",
+  "sources": [
+    {
+      "title": "About",
+      "url": "https://www.ferrybuildingmarketplace.com/about/",
+      "source": "ferrybuildingmarketplace.com",
+      "via": "Bright Data"
+    },
+    {
+      "title": "San Francisco Ferry Building",
+      "url": "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
+      "source": "en.wikipedia.org",
+      "via": "Bright Data"
+    }
+  ],
+  "createdAt": "2026-11-13T19:16:08.817Z"
+}

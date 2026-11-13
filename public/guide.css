@@ -1,0 +1,46 @@
+/* Tour guide: walk-in entrance, pointing, narrating. Transform and opacity only. */
+.gk { fill: none; stroke: var(--ink-on-paper, #1f1d1a); stroke-width: 0.9; stroke-linecap: round; stroke-linejoin: round; filter: url(#ink-fine); }
+.gw { filter: url(#wash-fine); }
+.guide-figure .leg, .guide-figure .arm { transform-box: fill-box; transform-origin: 50% 0%; }
+.m-open { opacity: 0; }
+
+/* walking in from the left, up the hill */
+.walker { transform: translate(0, 0); }
+.walking .walker { animation: walk-in 2.2s cubic-bezier(0.33, 0.1, 0.35, 1) both; }
+/* distances are in her own (scaled 0.62) units: about 210 street units along the hill slope */
+@keyframes walk-in { from { transform: translate(-345px, 46px); } to { transform: translate(0, 0); } }
+.walking .bob { animation: bob 0.3s ease-in-out 7 alternate; }
+@keyframes bob { to { transform: translateY(-2.5px); } }
+.walking .leg-l, .walking .arm-r { animation: swing 0.3s ease-in-out 7 alternate; }
+.walking .leg-r, .walking .arm-l { animation: swing 0.3s ease-in-out 7 alternate-reverse; }
+@keyframes swing { from { transform: rotate(16deg); } to { transform: rotate(-16deg); } }
+
+/* arrived: an "after you" gesture toward the door, then the bubble */
+.arm-r { transition: transform 0.45s cubic-bezier(0.3, 1.4, 0.5, 1); }
+.arrived .arm-r { transform: rotate(-48deg); }
+.bubble { opacity: 0; transform: translateY(6px); transition: opacity 0.4s 0.35s, transform 0.4s 0.35s; }
+.arrived .bubble { opacity: 1; transform: none; }
+
+/* narrator: mouth and a gentle bob while the story plays */
+.speaking .guide-bust { animation: talk-bob 0.9s ease-in-out infinite alternate; }
+@keyframes talk-bob { to { transform: translateY(-1.5px) rotate(-1deg); } }
+.speaking .m-open { animation: mouth 0.32s steps(1) infinite; }
+.speaking .m-closed { animation: mouth 0.32s steps(1) infinite reverse; }
+@keyframes mouth { 0% { opacity: 1; } 50% { opacity: 0; } }
+
+/* reading in the archives: slow page-turn nod */
+.reading .guide-bust { animation: read-nod 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes read-nod { 50% { transform: rotate(1.5deg) translateY(1px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .walking .walker, .walking .bob, .walking .leg, .walking .arm, .speaking .guide-bust, .reading .guide-bust { animation: none !important; }
+  .arm-r, .bubble { transition: none !important; }
+}
+
+/* hidden until the entrance starts, so she doesn't flash at the door first */
+#home:not(.walking):not(.arrived) .walker { opacity: 0; }
+
+/* narrator swaps to her open book while the story plays */
+.narrator .pose-reading { display: none; }
+.narrator.speaking .pose-idle { display: none; }
+.narrator.speaking .pose-reading { display: inline; }

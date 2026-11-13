@@ -1,0 +1,160 @@
+{
+  "building": {
+    "id": "lotta-s-fountain",
+    "name": "Lotta's Fountain",
+    "address": "United States historic place"
+  },
+  "built": "1875",
+  "architect": null,
+  "hook": "Actress Lotta Crabtree gifted this historic fountain where locals still gather today.",
+  "claims": [
+    {
+      "id": "c0",
+      "text": "Actress Lotta Crabtree commissioned the cast-iron monument as a gift to San Francisco, and it was dedicated on September 9, 1875.",
+      "year": "1875",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Lotta%27s_Fountain",
+          "says": "Actress Lotta Crabtree commissioned the cast-iron fountain for San Francisco, and it was dedicated on September 9, 1875."
+        },
+        {
+          "source": "opensfhistory.org",
+          "url": "https://www.opensfhistory.org/osfhcrucible/2018/01/",
+          "says": "Mayor Otis unveiled the cast-iron fountain on September 9, 1875, as Broadway star Lotta Crabtree's gift thanking San Francisco."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c1",
+      "text": "At the 1875 unveiling ceremony, a reporter quipped that the crowd was full of idle hoodlums needing water while Crabtree's aunt took the first sip.",
+      "year": "1875",
+      "kind": "anecdote",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "opensfhistory.org",
+          "url": "https://www.opensfhistory.org/osfhcrucible/2018/01/",
+          "says": "A reporter joked the crowd was mainly idle hoodlums needing water, while Lotta's aunt took the very first drink."
+        }
+      ],
+      "verdict": "legend",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c2",
+      "text": "The fountain became a vital gathering point after the 1906 earthquake and fire, inspiring an annual April 18 commemoration that began in 1919.",
+      "year": "1906",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Lotta%27s_Fountain",
+          "says": "It served as a gathering spot after the 1906 earthquake, sparking an annual April 18 commemoration starting in 1919."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c3",
+      "text": "Opera soprano Luisa Tetrazzini gave a famous Christmas Eve concert at the fountain in 1910, later commemorated with a plaque.",
+      "year": "1910",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Lotta%27s_Fountain",
+          "says": "Barred from stages by legal troubles, soprano Luisa Tetrazzini performed memorably at the fountain on Christmas Eve 1910."
+        },
+        {
+          "source": "opensfhistory.org",
+          "url": "https://www.opensfhistory.org/osfhcrucible/2018/01/",
+          "says": "Soprano Luisa Tetrazzini sang at a 1910 Christmas fountain ceremony and received a commemorative plaque there in March 1912."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c4",
+      "text": "A tall column was added to match new Market Street light standards, though the sources disagree on whether this happened in 1916 or 1917.",
+      "year": "1916-1917",
+      "kind": "fact",
+      "conflict": true,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Lotta%27s_Fountain",
+          "says": "A bronze column was added in 1916 to match the height of new streetlamps installed along Market Street."
+        },
+        {
+          "source": "opensfhistory.org",
+          "url": "https://www.opensfhistory.org/osfhcrucible/2018/01/",
+          "says": "Artist M. Earl Cummings proposed adding a tall shaft in January 1917, finishing it mid-year despite public criticism."
+        }
+      ],
+      "verdict": "disputed",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c5",
+      "text": "In 1974, workers slightly relocated the fountain during Market Street renovations to line it up with the Path of Gold streetlamps.",
+      "year": "1974",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Lotta%27s_Fountain",
+          "says": "During 1974 Market Street renovations, workers shifted the fountain slightly to align with the Path of Gold streetlamps."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c6",
+      "text": "The fountain was restored to its original height in the late 1990s, though the sources differ on the exact date and whether water actually flows.",
+      "year": "1998-1999",
+      "kind": "fact",
+      "conflict": true,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Lotta%27s_Fountain",
+          "says": "Refurbished and shortened to its 1875 look in 1999, the fountain's lion-head spigots run during daytime hours."
+        },
+        {
+          "source": "opensfhistory.org",
+          "url": "https://www.opensfhistory.org/osfhcrucible/2018/01/",
+          "says": "After a 1998 windstorm damaged the shaft, restoration returned its original height, though the author never saw it flow."
+        }
+      ],
+      "verdict": "disputed",
+      "decidedBy": "TypeSafe Jev"
+    }
+  ],
+  "story": "Look up at Lotta's Fountain, the cast-iron monument actress Lotta Crabtree commissioned as a gift to San Francisco, dedicated on September 9, 1875, though its architect remains unknown. After the 1906 earthquake and fire, it became a vital gathering point. Imagine Christmas Eve in 1910, when opera soprano Luisa Tetrazzini gave a famous concert right here, later commemorated with a plaque. A tall column was added to match new Market Street light standards, though historians disagree on whether this happened in 1916 or 1917. Those 1906 gatherings also inspired an annual April 18 commemoration beginning in 1919. Later, in 1974, workers slightly relocated the fountain during Market Street renovations to line it up with the Path of Gold streetlamps. Take one last look, because the story goes that at the 1875 unveiling ceremony, a reporter quipped that the crowd was full of idle hoodlums needing water while Crabtree's aunt took the first sip.",
+  "sources": [
+    {
+      "title": "Lotta's Fountain",
+      "url": "https://en.wikipedia.org/wiki/Lotta%27s_Fountain",
+      "source": "en.wikipedia.org",
+      "via": "Bright Data"
+    },
+    {
+      "title": "Lotta's Fountain: A Closer Look",
+      "url": "https://www.opensfhistory.org/osfhcrucible/2018/01/",
+      "source": "opensfhistory.org",
+      "via": "Bright Data"
+    }
+  ],
+  "createdAt": "2026-11-13T21:21:50.403Z"
+}

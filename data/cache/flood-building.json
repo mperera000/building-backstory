@@ -1,0 +1,165 @@
+{
+  "building": {
+    "id": "flood-building",
+    "name": "James Flood Building",
+    "address": "870 Market St, San Francisco"
+  },
+  "built": "1902-1904",
+  "architect": "Albert Pissis",
+  "hook": "A historic Market Street landmark surviving earthquakes, demolition threats, and detective lore.",
+  "claims": [
+    {
+      "id": "c0",
+      "text": "James L. Flood erected the building on the burned Baldwin Hotel site as a tribute to his father, millionaire James Clair Flood.",
+      "year": "1904",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "floodbuilding.com",
+          "url": "https://floodbuilding.com/history.html",
+          "says": "James L. Flood bought the burned Baldwin Hotel site and commissioned Albert Pissis to honor his father."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Flood_Building",
+          "says": "Built on the former Baldwin's Hotel site, the building honored Comstock millionaire James Clair Flood and opened in 1904."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c1",
+      "text": "The Flood Building survived the 1906 earthquake and fire, though accounts differ on whether restoration finished in 1907 or took two years.",
+      "year": "1906",
+      "kind": "fact",
+      "conflict": true,
+      "evidence": [
+        {
+          "source": "floodbuilding.com",
+          "url": "https://floodbuilding.com/history.html",
+          "says": "It survived the 1906 disaster and reopened after restoration in 1907 as a symbol of resilience."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Flood_Building",
+          "says": "Among the few major survivors of the 1906 quake and fire, its interior required two years to restore."
+        }
+      ],
+      "verdict": "disputed",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c2",
+      "text": "Plans to demolish or shorten the structure for Woolworth's were thwarted when the U.S. military requisitioned space during the Korean War.",
+      "year": "1950",
+      "kind": "fact",
+      "conflict": true,
+      "evidence": [
+        {
+          "source": "floodbuilding.com",
+          "url": "https://floodbuilding.com/history.html",
+          "says": "In the 1940s, the family avoided demolishing nine floors for Woolworth's by leasing upper space to the government."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Flood_Building",
+          "says": "After accepting Woolworth's 1950 three-story replacement plan and evicting tenants, the Navy took over the building until 1953."
+        }
+      ],
+      "verdict": "disputed",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c3",
+      "text": "Before becoming a famous novelist, Dashiell Hammett worked on the third floor as a Pinkerton operative and set his fictional detective agency there.",
+      "year": null,
+      "kind": "anecdote",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Flood_Building",
+          "says": "Pinkerton operative Dashiell Hammett worked on the third floor and placed his fictional Continental Detective Agency inside."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c4",
+      "text": "Demonstrators occupied the South Vietnamese consulate inside the building in 1975 to mark the second anniversary of the Paris Peace Agreement.",
+      "year": "1975",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Flood_Building",
+          "says": "On January 27, 1975, protesters took over the South Vietnam consulate on the peace agreement's second anniversary."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c5",
+      "text": "Beginning in the 1920s, the family adapted the property into bustling medical and dental offices for several decades.",
+      "year": "1920s",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "floodbuilding.com",
+          "url": "https://floodbuilding.com/history.html",
+          "says": "Remodeled in the 1920s, it served as a busy dental and medical center for over thirty years."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Flood_Building",
+          "says": "By the time of World War II, the building housed medical and dental offices."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c6",
+      "text": "In the 1990s, after Woolworth's scaled back and eventually left, the Flood family renovated the building's retail spaces.",
+      "year": "1990s",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "floodbuilding.com",
+          "url": "https://floodbuilding.com/history.html",
+          "says": "After Woolworth's downsized in 1992 and left, James C. Flood led a major restoration of the ground floor."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Flood_Building",
+          "says": "Woolworth's closed in 1997 after downsizing in 1993, and a $15 million 1990s renovation added a bust of Flood."
+        }
+      ],
+      "verdict": "disputed",
+      "decidedBy": "TypeSafe Jev"
+    }
+  ],
+  "story": "Look up at the James Flood Building in front of you, erected between 1902 and 1904 by James L. Flood on the burned Baldwin Hotel site as a tribute to his father, millionaire James Clair Flood. Designed by architect Albert Pissis, it survived the 1906 earthquake and fire, though historians disagree on whether restoration finished in 1907 or took two years.\n\nNow, picture the scene just above you. Before becoming a famous novelist, Dashiell Hammett worked on the third floor as a Pinkerton operative and set his fictional detective agency there. Beginning in the 1920s, the family adapted the property into bustling medical and dental offices for several decades. Later still, in 1975, demonstrators occupied the South Vietnamese consulate inside the building to mark the second anniversary of the Paris Peace Agreement. Take one last look at its storied facade before you walk on.",
+  "sources": [
+    {
+      "title": "Flood Building History | 870 Market Street, San Francisco ...",
+      "url": "https://floodbuilding.com/history.html",
+      "source": "floodbuilding.com",
+      "via": "Bright Data"
+    },
+    {
+      "title": "Flood Building",
+      "url": "https://en.wikipedia.org/wiki/Flood_Building",
+      "source": "en.wikipedia.org",
+      "via": "Bright Data"
+    }
+  ],
+  "createdAt": "2026-11-13T19:18:02.865Z"
+}

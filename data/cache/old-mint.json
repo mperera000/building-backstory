@@ -1,0 +1,140 @@
+{
+  "building": {
+    "id": "old-mint",
+    "name": "Old San Francisco Mint",
+    "address": "88 5th St, San Francisco"
+  },
+  "built": "1869-1874",
+  "architect": "Alfred B. Mullett",
+  "hook": "Built from Canadian sandstone, this Greek Revival mint aided San Francisco's recovery.",
+  "claims": [
+    {
+      "id": "c0",
+      "text": "Construction of the replacement mint at Fifth and Mission Streets began in 1869, and coin production started there on December 10, 1874.",
+      "year": "1874",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Mint",
+          "says": "Building at Fifth and Mission began in 1869, operations relocated in 1874, and minting started December 10."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c1",
+      "text": "Alfred B. Mullett designed the E-shaped building for the Treasury Department in a restrained Greek Revival style featuring Doric columns and an enclosed courtyard.",
+      "year": null,
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Mint",
+          "says": "Mullett created an E-shaped Greek Revival design with Doric details, a pedimented portico, and an enclosed courtyard."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c2",
+      "text": "Builders constructed the columns, upper stories, and most of the exterior using sandstone imported from Newcastle Island in British Columbia.",
+      "year": null,
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Mint",
+          "says": "Sandstone quarried near Nanaimo on British Columbia's Newcastle Island was brought in for columns, exteriors, and upper floors."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c3",
+      "text": "Beyond United States currency, the facility struck coins for the Kingdom of Hawaii in 1883 and for the Philippines between 1903 and 1919.",
+      "year": "1883-1919",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Mint",
+          "says": "The facility struck Hawaiian Kalākaua coins in 1883 and produced Philippine pesos and centavos from 1903 to 1919."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c4",
+      "text": "A 2006 commemorative dollar depicts the Old Mint to mark the centennial of the 1906 San Francisco earthquake and the building's role in recovery.",
+      "year": "2006",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Mint",
+          "says": "A 2006 commemorative dollar displays the building, honoring its recovery role following the 1906 earthquake."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c5",
+      "text": "Minting remained in the 1874 structure until 1937, when operations relocated to San Francisco's newly completed third Mint building.",
+      "year": "1937",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/San_Francisco_Mint",
+          "says": "In 1937, Mint operations transferred out of the 1874 building into a newly finished third facility."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c6",
+      "text": "The Old San Francisco Mint earned designation as a National Historic Landmark in 1961.",
+      "year": "1961",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "usmint.gov",
+          "url": "https://www.usmint.gov/about/tours-and-locations/san-francisco?srsltid=AYCX9vJAy-4q_CWALYUVu8rJWir8WadJ5WbrpcDIdEAvKMILlPKV6LHU",
+          "says": "States that the Old San Francisco Mint received National Historic Landmark designation in 1961."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    }
+  ],
+  "story": "Right here at Fifth and Mission Streets, construction on this replacement mint began in 1869. Look up at the restrained Greek Revival building designed by Alfred B. Mullett for the Treasury Department. Take in those Doric columns, the upper stories, and most of the exterior. Builders crafted them using sandstone imported from Newcastle Island in British Columbia, shaping an E-shaped structure with an enclosed courtyard. Coin production started inside on December 10, 1874. Beyond United States currency, the facility struck coins for the Kingdom of Hawaii in 1883 and for the Philippines between 1903 and 1919. Minting remained in this 1874 structure until 1937, when operations relocated to San Francisco’s newly completed third Mint building. In 1961, the Old San Francisco Mint earned designation as a National Historic Landmark. And a 2006 commemorative dollar depicts the Old Mint to mark the centennial of the 1906 San Francisco earthquake and the building’s role in recovery.",
+  "sources": [
+    {
+      "title": "San Francisco Mint",
+      "url": "https://en.wikipedia.org/wiki/San_Francisco_Mint",
+      "source": "en.wikipedia.org",
+      "via": "Bright Data"
+    },
+    {
+      "title": "San Francisco Mint",
+      "url": "https://www.usmint.gov/about/tours-and-locations/san-francisco?srsltid=AYCX9vJAy-4q_CWALYUVu8rJWir8WadJ5WbrpcDIdEAvKMILlPKV6LHU",
+      "source": "usmint.gov",
+      "via": "Bright Data"
+    }
+  ],
+  "createdAt": "2026-11-13T19:17:10.750Z"
+}

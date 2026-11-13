@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Building Backstory: Learn San Francisco's Story</title>
+<meta name="description" content="Snap any building, statue or arch in San Francisco and hear its fact-checked story.">
+<meta name="theme-color" content="#c9d3d8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#18212b" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23e9c66b'/><path d='M6 14 16 5l10 9v14H6z' fill='%23e9c66b' stroke='%231f1d1a' stroke-width='2'/><rect x='12' y='17' width='8' height='11' fill='%23c0362c'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500;700&family=Reenie+Beanie&family=Patrick+Hand&family=Young+Serif&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/guide.css">
+</head>
+<body>
+<!-- Shared SVG filters: wobbly ink lines and bleeding watercolor washes -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/>
+    </filter>
+    <filter id="wash" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="9" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="9" result="d"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="2" result="g"/>
+      <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.7 1.12" result="ga"/>
+      <feComposite in="d" in2="ga" operator="in" result="grain"/>
+      <feGaussianBlur in="grain" stdDeviation=".4"/>
+    </filter>
+  </defs>
+</svg>
+
+<svg class="sky-sun day-only" viewBox="0 0 100 100" aria-hidden="true">
+  <circle class="w" cx="50" cy="50" r="40" fill="#f6dd8f" opacity=".45"/>
+  <circle class="w" cx="50" cy="50" r="26" fill="#f2c45a"/>
+  <circle class="k2" cx="50" cy="50" r="26" opacity=".55"/>
+</svg>
+<main id="app">
+
+  <!-- HOME -->
+  <section id="home" class="screen active">
+    <header class="hero">
+      <h1 class="title">Learn <span class="swash">San Francisco's<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path class="w" d="M4 12 C 40 4, 90 6, 130 8 S 190 14, 197 9 L 196 17 C 150 20, 80 19, 6 18 Z" fill="var(--swash)"/></svg></span> story</h1>
+      <p class="lede note-hand">Show me a building, a statue or an old arch, and I'll tell you what really happened there.</p>
+    </header>
+
+    <svg class="scene" viewBox="0 0 340 480" role="group" aria-label="Three Victorian houses on a San Francisco hill in the fog">
+      <!-- sky: sun and birds by day, stars by night -->
+      <g class="day-only" aria-hidden="true">
+        <g class="birds k2 flock-0"><path class="bird b2" d="M152 65 q4.0 -4.8 8.0 0 q4.0 -4.8 8.0 0"/><path class="bird " d="M160 67 q3.0 -3.6 6.0 0 q3.0 -3.6 6.0 0"/><path class="bird b3" d="M197 62 q4.0 -4.8 8.0 0 q4.0 -4.8 8.0 0"/><path class="bird b2" d="M173 41 q2.5 -3.0 5.0 0 q2.5 -3.0 5.0 0"/><path class="bird b3" d="M133 39 q2.5 -3.0 5.0 0 q2.5 -3.0 5.0 0"/><path class="bird b3" d="M198 74 q2.5 -3.0 5.0 0 q2.5 -3.0 5.0 0"/></g>
+        <g class="birds k2 flock-1"><path class="bird b3" d="M-235 70 q4.5 -5.4 9.0 0 q4.5 -5.4 9.0 0"/><path class="bird b3" d="M-265 81 q2.5 -3.0 5.0 0 q2.5 -3.0 5.0 0"/><path class="bird " d="M-277 45 q2.5 -3.0 5.0 0 q2.5 -3.0 5.0 0"/><path class="bird b2" d="M-255 80 q2.5 -3.0 5.0 0 q2.5 -3.0 5.0 0"/><path class="bird " d="M-244 70 q4.5 -5.4 9.0 0 q4.5 -5.4 9.0 0"/></g>
+        <g class="birds k2 flock-2"><path class="bird b2" d="M531 32 q3.5 -4.2 7.0 0 q3.5 -4.2 7.0 0"/><path class="bird b2" d="M465 60 q2.5 -3.0 5.0 0 q2.5 -3.0 5.0 0"/><path class="bird b3" d="M548 35 q4.0 -4.8 8.0 0 q4.0 -4.8 8.0 0"/><path class="bird b2" d="M572 23 q3.5 -4.2 7.0 0 q3.5 -4.2 7.0 0"/><path class="bird b2" d="M562 32 q4.5 -5.4 9.0 0 q4.5 -5.4 9.0 0"/></g>
+        <g class="birds k2 flock-3"><path class="bird " d="M-12 74 q4.5 -5.4 9.0 0 q4.5 -5.4 9.0 0"/><path class="bird b2" d="M36 76 q3.5 -4.2 7.0 0 q3.5 -4.2 7.0 0"/><path class="bird " d="M-7 71 q2.5 -3.0 5.0 0 q2.5 -3.0 5.0 0"/></g>
+      </g>
+      <g class="night-only stars" aria-hidden="true" fill="#fff4cf">
+        <circle cx="88" cy="59" r="1.2" style="animation-delay:2.54s;animation-duration:3.54s"/><circle cx="114" cy="107" r="1.2" style="animation-delay:3.23s;animation-duration:3.63s"/><circle cx="262" cy="73" r="0.9" style="animation-delay:3.15s;animation-duration:2.24s"/><circle cx="303" cy="60" r="0.7" style="animation-delay:0.58s;animation-duration:4.3s"/><circle cx="123" cy="94" r="0.7" style="animation-delay:1.75s;animation-duration:4.99s"/><circle cx="212" cy="84" r="1.2" style="animation-delay:0.14s;animation-duration:3.12s"/><circle cx="258" cy="94" r="0.7" style="animation-delay:2.6s;animation-duration:4.83s"/><circle cx="15" cy="25" r="0.7" style="animation-delay:0.5s;animation-duration:4.8s"/><circle cx="236" cy="26" r="1.4" style="animation-delay:2.91s;animation-duration:3.32s"/><circle cx="81" cy="29" r="0.7" style="animation-delay:1.88s;animation-duration:4.5s"/><circle cx="42" cy="105" r="0.9" style="animation-delay:0.83s;animation-duration:4.91s"/><circle cx="301" cy="99" r="0.7" style="animation-delay:0.49s;animation-duration:3.53s"/><circle cx="202" cy="31" r="1" style="animation-delay:3.69s;animation-duration:4.69s"/><circle cx="213" cy="43" r="1" style="animation-delay:3.82s;animation-duration:3.6s"/><circle cx="166" cy="68" r="1.2" style="animation-delay:1.06s;animation-duration:4.54s"/><circle cx="85" cy="97" r="1.2" style="animation-delay:0.01s;animation-duration:2.4s"/><circle cx="310" cy="101" r="1.4" style="animation-delay:0.89s;animation-duration:3.9s"/><circle cx="288" cy="85" r="0.7" style="animation-delay:0.72s;animation-duration:2.68s"/><circle cx="182" cy="112" r="1" style="animation-delay:1.39s;animation-duration:3.87s"/><circle cx="160" cy="37" r="0.7" style="animation-delay:0.67s;animation-duration:4.78s"/><circle cx="93" cy="105" r="1.2" style="animation-delay:1.5s;animation-duration:4.11s"/><circle cx="270" cy="121" r="0.9" style="animation-delay:1.63s;animation-duration:4.97s"/><circle cx="306" cy="7" r="1" style="animation-delay:1.96s;animation-duration:3.25s"/><circle cx="130" cy="125" r="0.9" style="animation-delay:0.65s;animation-duration:2.39s"/><circle cx="63" cy="127" r="1" style="animation-delay:1.58s;animation-duration:2.53s"/><circle cx="497" cy="18" r="1.1" style="animation-delay:2.33s;animation-duration:4.77s"/><circle cx="-161" cy="10" r="0.8" style="animation-delay:1.73s;animation-duration:2.58s"/><circle cx="-415" cy="76" r="1.3" style="animation-delay:0.24s;animation-duration:3.87s"/><circle cx="-143" cy="86" r="1.6" style="animation-delay:3.79s;animation-duration:3.9s"/><circle cx="212" cy="12" r="1" style="animation-delay:0.19s;animation-duration:4.63s"/><circle cx="-7" cy="59" r="1" style="animation-delay:2.16s;animation-duration:3.88s"/><circle cx="547" cy="110" r="1" style="animation-delay:0.41s;animation-duration:3.89s"/><circle cx="-216" cy="53" r="0.8" style="animation-delay:2.19s;animation-duration:2.56s"/><circle cx="-478" cy="85" r="1" style="animation-delay:1.99s;animation-duration:3.78s"/><circle cx="43" cy="65" r="1.6" style="animation-delay:3.69s;animation-duration:3.34s"/><circle cx="-92" cy="107" r="1" style="animation-delay:2.8s;animation-duration:3.03s"/><circle cx="576" cy="44" r="1.6" style="animation-delay:1.98s;animation-duration:3.29s"/><circle cx="319" cy="42" r="1.6" style="animation-delay:3.92s;animation-duration:2.71s"/><circle cx="256" cy="27" r="1.1" style="animation-delay:0.61s;animation-duration:3.67s"/><circle cx="-520" cy="91" r="0.8" style="animation-delay:3.06s;animation-duration:3.89s"/><circle cx="42" cy="49" r="1.1" style="animation-delay:2.38s;animation-duration:3.91s"/><circle cx="334" cy="14" r="0.8" style="animation-delay:3.78s;animation-duration:3.63s"/><circle cx="760" cy="14" r="0.8" style="animation-delay:2.92s;animation-duration:3.2s"/><circle cx="583" cy="93" r="1.3" style="animation-delay:1.14s;animation-duration:3.4s"/><circle cx="769" cy="50" r="0.8" style="animation-delay:3.76s;animation-duration:3.32s"/><circle cx="651" cy="20" r="1.3" style="animation-delay:0.24s;animation-duration:4.4s"/><circle cx="-336" cy="100" r="1" style="animation-delay:1.59s;animation-duration:4.78s"/><circle cx="416" cy="16" r="1" style="animation-delay:1.8s;animation-duration:3.83s"/><circle cx="-320" cy="110" r="1.3" style="animation-delay:3.46s;animation-duration:3.12s"/><circle cx="250" cy="51" r="1.3" style="animation-delay:3.83s;animation-duration:2.79s"/><circle cx="-240" cy="25" r="1" style="animation-delay:2.63s;animation-duration:2.43s"/><circle cx="606" cy="29" r="1.1" style="animation-delay:1.13s;animation-duration:2.78s"/><circle cx="494" cy="53" r="1.6" style="animation-delay:2.27s;animation-duration:4.88s"/><circle cx="814" cy="115" r="1.6" style="animation-delay:3.8s;animation-duration:4.1s"/><circle cx="915" cy="12" r="1.3" style="animation-delay:3.6s;animation-duration:4.43s"/><circle cx="793" cy="108" r="1.6" style="animation-delay:1.57s;animation-duration:3.44s"/><circle cx="-388" cy="67" r="1.3" style="animation-delay:0.25s;animation-duration:2.58s"/><circle cx="-173" cy="62" r="1" style="animation-delay:0.44s;animation-duration:3.96s"/><circle cx="-391" cy="6" r="1.6" style="animation-delay:0.61s;animation-duration:2.66s"/><circle cx="144" cy="84" r="0.8" style="animation-delay:0.28s;animation-duration:2.94s"/><circle cx="170" cy="25" r="1.1" style="animation-delay:3.82s;animation-duration:3.97s"/><circle cx="371" cy="21" r="0.8" style="animation-delay:3.4s;animation-duration:4.98s"/><circle cx="354" cy="67" r="1.3" style="animation-delay:1.25s;animation-duration:2.77s"/><circle cx="935" cy="49" r="1.1" style="animation-delay:1.91s;animation-duration:4.2s"/><circle cx="457" cy="8" r="1" style="animation-delay:3.8s;animation-duration:3.77s"/><circle cx="-300" cy="94" r="1.6" style="animation-delay:3.66s;animation-duration:4.37s"/><circle cx="10" cy="88" r="0.8" style="animation-delay:2.78s;animation-duration:3.08s"/><circle cx="151" cy="122" r="1" style="animation-delay:1.42s;animation-duration:2.98s"/><circle cx="509" cy="105" r="1.6" style="animation-delay:1.32s;animation-duration:2.98s"/><circle cx="-201" cy="109" r="1" style="animation-delay:3.27s;animation-duration:4.32s"/><path class="sparkle" d="M40 26 L41 29 L44 30 L41 31 L40 34 L39 31 L36 30 L39 29Z" style="animation-delay:0.68s"/><path class="sparkle" d="M204 14 L205 17 L208 18 L205 19 L204 22 L203 19 L200 18 L203 17Z" style="animation-delay:1.55s"/><path class="sparkle" d="M318 66 L319 69 L322 70 L319 71 L318 74 L317 71 L314 70 L317 69Z" style="animation-delay:1.07s"/><path class="sparkle" d="M-260 36 L-259 39 L-256 40 L-259 41 L-260 44 L-261 41 L-264 40 L-261 39Z" style="animation-delay:0.09s"/><path class="sparkle" d="M560 20 L561 23 L564 24 L561 25 L560 28 L559 25 L556 24 L559 23Z" style="animation-delay:0.08s"/><path class="sparkle" d="M780 56 L781 59 L784 60 L781 61 L780 64 L779 61 L776 60 L779 59Z" style="animation-delay:0.84s"/>
+      </g>
+      <!-- Golden Gate tower in the fog -->
+      <g class="w tower" opacity=".5">
+        <path d="M264 22 V196 M292 22 V196" stroke="var(--bridge)" stroke-width="7" fill="none"/>
+        <path d="M262 48 h32 M262 92 h32 M262 138 h32" stroke="var(--bridge)" stroke-width="5" fill="none"/>
+        <path d="M278 24 Q 330 108 360 118 M278 24 Q 220 108 170 126" stroke="var(--bridge)" stroke-width="2" fill="none"/>
+      </g>
+      <path class="w" d="M-620 150 q60 -20 120 0 t120 -6 t130 4 t120 -4 t130 6 t120 -6 t120 2 t130 4 t120 -6 t120 2 t130 4 t120 -4 t120 2 v46 h-1580z" fill="var(--fog)" opacity=".85"/>
+
+
+      <!-- the street continues down the hill on both sides (seen on wider screens) -->
+      <g class="w side-houses" opacity=".8"><polygon points="-398,224 -346,170 -294,224" fill="var(--blue)"/><rect x="-392" y="222" width="92" height="266" fill="var(--blue)"/><g fill="var(--win)"><rect x="-380" y="244" width="22" height="44"/><rect x="-338" y="244" width="22" height="44"/><rect x="-380" y="314" width="22" height="44"/><rect x="-338" y="314" width="22" height="44"/></g><rect x="-362" y="392" width="34" height="64" fill="var(--door3)"/><polygon points="-302,224 -250,170 -198,224" fill="var(--yellow)"/><rect x="-296" y="222" width="92" height="266" fill="var(--yellow)"/><g fill="var(--win)"><rect x="-284" y="244" width="22" height="44"/><rect x="-242" y="244" width="22" height="44"/><rect x="-284" y="314" width="22" height="44"/><rect x="-242" y="314" width="22" height="44"/></g><rect x="-266" y="392" width="34" height="64" fill="var(--door3)"/><polygon points="-204,224 -152,170 -100,224" fill="var(--pink)"/><rect x="-198" y="222" width="92" height="266" fill="var(--pink)"/><g fill="var(--win)"><rect x="-186" y="244" width="22" height="44"/><rect x="-144" y="244" width="22" height="44"/><rect x="-186" y="314" width="22" height="44"/><rect x="-144" y="314" width="22" height="44"/></g><rect x="-168" y="392" width="34" height="64" fill="var(--door2)"/><polygon points="-108,224 -56,170 -4,224" fill="var(--yellow)"/><rect x="-102" y="222" width="92" height="266" fill="var(--yellow)"/><g fill="var(--win)"><rect x="-90" y="244" width="22" height="44"/><rect x="-48" y="244" width="22" height="44"/><rect x="-90" y="314" width="22" height="44"/><rect x="-48" y="314" width="22" height="44"/></g><rect x="-72" y="392" width="34" height="64" fill="var(--door2)"/><polygon points="338,171 390,117 442,171" fill="var(--blue)"/><rect x="344" y="169" width="92" height="266" fill="var(--blue)"/><g fill="var(--win)"><rect x="356" y="191" width="22" height="44"/><rect x="398" y="191" width="22" height="44"/><rect x="356" y="261" width="22" height="44"/><rect x="398" y="261" width="22" height="44"/></g><rect x="374" y="339" width="34" height="64" fill="var(--door3)"/><polygon points="434,158 486,104 538,158" fill="var(--yellow)"/><rect x="440" y="156" width="92" height="266" fill="var(--yellow)"/><g fill="var(--win)"><rect x="452" y="178" width="22" height="44"/><rect x="494" y="178" width="22" height="44"/><rect x="452" y="248" width="22" height="44"/><rect x="494" y="248" width="22" height="44"/></g><rect x="470" y="326" width="34" height="64" fill="var(--door2)"/><polygon points="530,145 582,91 634,145" fill="var(--pink)"/><rect x="536" y="143" width="92" height="266" fill="var(--pink)"/><g fill="var(--win)"><rect x="548" y="165" width="22" height="44"/><rect x="590" y="165" width="22" height="44"/><rect x="548" y="235" width="22" height="44"/><rect x="590" y="235" width="22" height="44"/></g><rect x="566" y="313" width="34" height="64" fill="var(--door3)"/><polygon points="626,132 678,78 730,132" fill="var(--blue)"/><rect x="632" y="130" width="92" height="266" fill="var(--blue)"/><g fill="var(--win)"><rect x="644" y="152" width="22" height="44"/><rect x="686" y="152" width="22" height="44"/><rect x="644" y="222" width="22" height="44"/><rect x="686" y="222" width="22" height="44"/></g><rect x="662" y="300" width="34" height="64" fill="var(--door2)"/></g>
+      <path class="k side-houses" d="M-398 224 L-346 170 L-294 224 M-392 222 V478 M-300 222 V478 M-380 244 h22 v44 h-22z M-338 244 h22 v44 h-22z M-380 314 h22 v44 h-22z M-338 314 h22 v44 h-22z M-362 392 h34 v64 M-362 392 v64 M-302 224 L-250 170 L-198 224 M-296 222 V478 M-204 222 V478 M-284 244 h22 v44 h-22z M-242 244 h22 v44 h-22z M-284 314 h22 v44 h-22z M-242 314 h22 v44 h-22z M-266 392 h34 v64 M-266 392 v64 M-204 224 L-152 170 L-100 224 M-198 222 V478 M-106 222 V478 M-186 244 h22 v44 h-22z M-144 244 h22 v44 h-22z M-186 314 h22 v44 h-22z M-144 314 h22 v44 h-22z M-168 392 h34 v64 M-168 392 v64 M-108 224 L-56 170 L-4 224 M-102 222 V478 M-10 222 V478 M-90 244 h22 v44 h-22z M-48 244 h22 v44 h-22z M-90 314 h22 v44 h-22z M-48 314 h22 v44 h-22z M-72 392 h34 v64 M-72 392 v64 M338 171 L390 117 L442 171 M344 169 V425 M436 169 V425 M356 191 h22 v44 h-22z M398 191 h22 v44 h-22z M356 261 h22 v44 h-22z M398 261 h22 v44 h-22z M374 339 h34 v64 M374 339 v64 M434 158 L486 104 L538 158 M440 156 V412 M532 156 V412 M452 178 h22 v44 h-22z M494 178 h22 v44 h-22z M452 248 h22 v44 h-22z M494 248 h22 v44 h-22z M470 326 h34 v64 M470 326 v64 M530 145 L582 91 L634 145 M536 143 V399 M628 143 V399 M548 165 h22 v44 h-22z M590 165 h22 v44 h-22z M548 235 h22 v44 h-22z M590 235 h22 v44 h-22z M566 313 h34 v64 M566 313 v64 M626 132 L678 78 L730 132 M632 130 V386 M724 130 V386 M644 152 h22 v44 h-22z M686 152 h22 v44 h-22z M644 222 h22 v44 h-22z M686 222 h22 v44 h-22z M662 300 h34 v64 M662 300 v64" opacity=".7"/>
+      <!-- washes -->
+      <g class="w">
+        <polygon points="6,214 58,160 110,214" fill="var(--blue)"/><rect x="12" y="212" width="92" height="238" fill="var(--blue)"/>
+        <polygon points="126,192 178,132 230,192" fill="var(--yellow)"/><rect x="132" y="190" width="92" height="246" fill="var(--yellow)"/>
+        <polygon points="234,174 286,120 338,174" fill="var(--pink)"/><rect x="240" y="172" width="92" height="250" fill="var(--pink)"/>
+        <polygon points="34,206 58,182 82,206" fill="var(--trim)"/><polygon points="154,184 178,156 202,184" fill="var(--trim)"/><polygon points="262,166 286,142 310,166" fill="var(--trim)"/>
+        <g fill="var(--win)">
+          <rect x="24" y="232" width="22" height="44"/><rect x="66" y="232" width="22" height="44"/><rect x="24" y="302" width="22" height="44"/><rect x="66" y="302" width="22" height="44"/>
+          <rect x="144" y="208" width="22" height="44"/><rect x="190" y="208" width="22" height="44"/>
+          <rect x="252" y="192" width="22" height="44"/><rect x="298" y="192" width="22" height="44"/><rect x="252" y="262" width="22" height="44"/><rect x="298" y="262" width="22" height="44"/>
+          <rect x="24" y="372" width="12" height="48"/><rect x="304" y="344" width="16" height="50"/>
+        </g>
+        <rect x="142" y="270" width="72" height="24" fill="var(--sign)"/>
+        <rect x="42" y="372" width="34" height="64" fill="var(--door2)"/><rect x="266" y="342" width="34" height="64" fill="var(--door3)"/>
+        <polygon points="150,412 206,412 212,432 144,432" fill="var(--step)"/>
+        <ellipse cx="226" cy="430" rx="11" ry="6" fill="#b4573b"/><circle cx="226" cy="416" r="12" fill="var(--leaf)"/>
+      </g>
+
+      <!-- ink -->
+      <g class="k">
+        <path d="M6 214 L58 160 L110 214 M12 212 V450 M104 212 V442 M34 206 L58 182 L82 206 M12 222 H104 M24 232 h22 v44 h-22z M66 232 h22 v44 h-22z M24 302 h22 v44 h-22z M66 302 h22 v44 h-22z M12 290 H104 M12 358 H104 M42 372 h34 v64 M42 372 v64 M34 436 h50 M24 372 h12 v48 h-12z"/>
+        <path d="M126 192 L178 132 L230 192 M132 190 V436 M224 190 V430 M154 184 L178 156 L202 184 M132 200 H224 M144 208 h22 v44 h-22z M190 208 h22 v44 h-22z M142 270 h72 v24 h-72z M132 302 H224 M150 412 H206 L212 432 M144 432 L150 412 M147 422 H209 M218 394 v-14 h8 v14z M222 380 v-6"/>
+        <path d="M234 174 L286 120 L338 174 M240 172 V422 M332 172 V414 M262 166 L286 142 L310 166 M240 182 H332 M252 192 h22 v44 h-22z M298 192 h22 v44 h-22z M252 262 h22 v44 h-22z M298 262 h22 v44 h-22z M240 324 H332 M266 342 h34 v64 M266 342 v64 M258 406 h50 M304 344 h16 v50 h-16z"/>
+      </g>
+      <!-- hill, in front of the house bases -->
+      <path class="w" d="M-620 500 L-620 459 Q-120 459 -10 458 L960 328 L960 500z" fill="var(--hill)"/>
+      <path class="k" d="M-620 459 Q-120 459 -10 458 L960 328"/>
+      <g class="k2">
+        <path d="M44 198 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 M164 176 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 M272 158 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0 q4 -4 8 0"/>
+        <path d="M35 232 v44 M77 232 v44 M155 208 v44 M201 208 v44 M263 192 v44 M309 192 v44 M263 262 v44 M309 262 v44"/>
+        <path d="M18 226 v-4 M30 226 v-4 M42 226 v-4 M54 226 v-4 M66 226 v-4 M78 226 v-4 M90 226 v-4 M138 204 v-4 M150 204 v-4 M162 204 v-4 M174 204 v-4 M186 204 v-4 M198 204 v-4 M210 204 v-4 M246 186 v-4 M258 186 v-4 M270 186 v-4 M282 186 v-4 M294 186 v-4 M306 186 v-4 M318 186 v-4"/>
+      </g>
+      <text class="sign" x="178" y="286.5" text-anchor="middle" textLength="62" lengthAdjust="spacingAndGlyphs">BACKSTORY</text>
+
+      <!-- the door: opens the camera -->
+      <g id="door" class="door-hit" tabindex="0" role="button" aria-label="Open the door to snap a building, statue or arch">
+        <rect class="glow" x="160" y="338" width="36" height="74" fill="#ffd27a"/>
+        <rect class="glow" x="166" y="346" width="24" height="60" fill="#fff0c4"/>
+        <g class="door">
+          <rect class="w" x="160" y="338" width="36" height="74" fill="var(--accent)"/>
+          <rect class="w" x="166" y="346" width="24" height="16" fill="#f2c36b"/>
+          <path class="k door-frame" d="M160 338 h36 v74 h-36z M166 346 h24 v16 h-24z M166 370 h24 v34 h-24z"/>
+          <circle cx="190" cy="384" r="1.8" fill="var(--ink-line)"/>
+        </g>
+        <rect x="150" y="330" width="56" height="86" fill="transparent"/>
+      </g>
+
+      <!-- demo stories on hanging tags -->
+      <g class="tag" data-demo="palace-hotel" tabindex="0" role="button" aria-label="Hear the Palace Hotel story">
+        <path class="k2" d="M58 214 v18"/>
+        <g transform="rotate(-5 58 246)"><rect x="16" y="232" width="84" height="28" rx="4" fill="var(--tag)" stroke="var(--ink-line)"/><text class="hand" x="58" y="252" font-size="19" text-anchor="middle">Palace Hotel</text></g>
+      </g>
+      <g class="tag" data-demo="ferry-building" tabindex="0" role="button" aria-label="Hear the Ferry Building story">
+        <path class="k2" d="M286 174 v18"/>
+        <g transform="rotate(5 286 206)"><rect x="242" y="192" width="88" height="28" rx="4" fill="var(--tag)" stroke="var(--ink-line)"/><text class="hand" x="286" y="212" font-size="19" text-anchor="middle">Ferry Building</text></g>
+      </g>
+      <!-- the tour guide walks in and points at the door (filled by app.js) -->
+      <g id="guide-home" class="guide-pos" transform="translate(130 440) scale(0.62)"><g class="walker"></g></g>
+      <g id="guide-bubble"></g>
+    </svg>
+    <input id="photo" type="file" accept="image/*" capture="environment" hidden>
+
+    <div class="ground">
+    <button id="snap" class="btn btn-ghost snap-btn"><i class="ph ph-camera" aria-hidden="true"></i> Snap a photo</button>
+    <div class="more">
+      <p class="label">Or hear a story from near Moscone</p>
+      <div class="chips">
+        <button class="btn btn-chip chip" data-demo="palace-hotel">Palace Hotel</button>
+        <button class="btn btn-chip chip" data-demo="ferry-building">Ferry Building</button>
+        <button class="btn btn-chip chip" data-demo="old-mint">Old Mint</button>
+        <button class="btn btn-chip chip" data-demo="flood-building">Flood Building</button>
+        <button class="btn btn-chip chip" data-demo="transamerica">Transamerica Pyramid</button>
+      </div>
+    </div>
+
+    <footer class="credits">Research by Bright Data. Verdicts by TypeSafe Jev. Voice by Gemini.</footer>
+    </div>
+  </section>
+
+  <!-- WORKING -->
+  <section id="working" class="screen">
+    <div class="print-photo"><img id="preview" alt=""><div class="scan"></div></div>
+    <div class="working-head">
+      <svg id="guide-reading" class="guide-mini reading" viewBox="-34 -200 68 104" aria-hidden="true"></svg>
+      <h2 class="working-title" id="working-title">Opening the archives</h2>
+    </div>
+    <ol id="steps" class="steps">
+      <li data-step="locate">Finding where you're standing</li>
+      <li data-step="identify">Gemini is looking at your photo</li>
+      <li data-step="pick">Jev is deciding what it is</li>
+      <li data-step="research">Bright Data is pulling the history</li>
+      <li data-step="judge">Jev is fact-checking every claim</li>
+      <li data-step="story">Writing your story</li>
+    </ol>
+  </section>
+
+  <!-- CONFIRM -->
+  <section id="confirm" class="screen">
+    <h2>Which one are you looking at?</h2>
+    <p id="scene" class="muted"></p>
+    <div id="candidates" class="stack"></div>
+    <button class="btn btn-text text-btn" data-go="home">Start over</button>
+  </section>
+
+  <!-- RESULT -->
+  <section id="result" class="screen">
+    <button class="btn btn-text back" data-go="home"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back to the street</button>
+    <div class="result-grid">
+    <div class="story-col">
+    <header class="plaque">
+      <figure class="plaque-photo" hidden><img id="r-photo" alt="Your photo of this place"></figure>
+      <p class="address" id="r-address"></p>
+      <h2 id="r-name"></h2>
+      <p id="r-hook" class="hook"></p>
+      <dl class="meta">
+        <div><dt>Built</dt><dd id="r-built">Unknown</dd></div>
+        <div><dt>Made by</dt><dd id="r-architect">Unknown</dd></div>
+        <div><dt>Claims</dt><dd id="r-count">0</dd></div>
+      </dl>
+    </header>
+
+    <div class="narrator-row">
+      <svg id="guide-narrator" class="guide-mini narrator" viewBox="-34 -200 68 104" aria-hidden="true"></svg>
+      <button id="play" class="btn btn-ghost play"><i class="ph-fill ph-play play-icon" aria-hidden="true"></i><span id="play-label">Play the story</span><span class="dur">about 1 min</span></button>
+    </div>
+    <audio id="audio" preload="none"></audio>
+    <div id="story" class="story"></div>
+    </div>
+    <div class="facts-col">
+
+    <h3 class="section-title">Truth or legend</h3>
+    <p class="by" id="r-judge"></p>
+    <div id="tally" class="tally"></div>
+    <div id="timeline" class="timeline" role="list" aria-label="Claims in date order"></div>
+
+    <section id="next-stop" class="next-stop" hidden>
+      <h3 class="section-title">Next stop</h3>
+      <p class="by" id="next-from">Historic places within a short walk.</p>
+      <div id="next-list" class="next-list"></div>
+    </section>
+
+    <h3 class="section-title">Sources</h3>
+    <ul id="sources" class="sources"></ul>
+    <p class="fineprint">Written in our own words from the sources above. Tap a source to read the original.</p>
+    </div>
+    </div>
+
+    <!-- pinned player: appears once the story is playing and the main Play button scrolls away -->
+    <div id="mini-player" class="mini-player" hidden>
+      <svg id="mini-face" class="mini-face" viewBox="-20 -186 40 40" aria-hidden="true"></svg>
+      <button id="mini-toggle" class="btn mini-toggle" aria-label="Pause the story"><i class="ph-fill ph-pause" aria-hidden="true"></i></button>
+      <div class="mini-track" aria-hidden="true"><span id="mini-progress"></span></div>
+      <span id="mini-time" class="mini-time">0:00</span>
+    </div>
+  </section>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</main>
+<script src="/app.js" type="module"></script>
+</body>
+</html>

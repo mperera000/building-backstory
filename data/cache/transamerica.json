@@ -1,0 +1,181 @@
+{
+  "building": {
+    "id": "transamerica",
+    "name": "Transamerica Pyramid",
+    "address": "600 Montgomery St, San Francisco"
+  },
+  "built": "1969-1972",
+  "architect": "William Pereira and Harry D. Som",
+  "hook": "Once mocked as an eyesore, this sunlit pyramid became San Francisco's icon.",
+  "claims": [
+    {
+      "id": "c0",
+      "text": "The skyscraper rests on reclaimed land that once formed Yerba Buena Cove's shoreline, where American sailors landed in 1846.",
+      "year": "1846",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Transamerica_Pyramid",
+          "says": "Built on filled cove shoreline where USS Portsmouth personnel came ashore in 1846 to claim the city."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c1",
+      "text": "An earlier building constructed in 1853 or 1854 stood on the site until it was razed for parking in 1959.",
+      "year": "1959",
+      "kind": "fact",
+      "conflict": true,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Transamerica_Pyramid",
+          "says": "Montgomery Block was erected in 1853 and torn down in 1959 to create a surface parking lot."
+        },
+        {
+          "source": "sftravel.com",
+          "url": "https://www.sftravel.com/article/everything-you-need-to-know-about-san-franciscos-transamerica-pyramid",
+          "says": "A four-story brick structure went up in 1854 and was cleared in 1959 for a parking garage."
+        }
+      ],
+      "verdict": "disputed",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c2",
+      "text": "Over its century-long lifespan, the earlier building hosted prominent lawyers, financiers, and celebrated creatives like Mark Twain and Frida Kahlo.",
+      "year": null,
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Transamerica_Pyramid",
+          "says": "The prior Montgomery Block provided workspaces and residences to notable local artists, attorneys, and financiers."
+        },
+        {
+          "source": "sftravel.com",
+          "url": "https://www.sftravel.com/article/everything-you-need-to-know-about-san-franciscos-transamerica-pyramid",
+          "says": "Cafes and bars inside the earlier brick building attracted literary and artistic icons like Twain, London, and Kahlo."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c3",
+      "text": "Transamerica CEO John Beckett and architect William Pereira chose the unusual tapered silhouette so natural sunlight could reach the streets below.",
+      "year": null,
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Transamerica_Pyramid",
+          "says": "CEO John Beckett requested a pyramid design specifically to let daylight reach the surrounding street level."
+        },
+        {
+          "source": "sftravel.com",
+          "url": "https://www.sftravel.com/article/everything-you-need-to-know-about-san-franciscos-transamerica-pyramid",
+          "says": "Pereira's tapering architecture broke norms by letting natural light filter down to the street below."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c4",
+      "text": "Fierce public opposition greeted the skyscraper's construction, with detractors mockingly nicknaming it 'Pereira's Prick' and distributing protest flyers.",
+      "year": null,
+      "kind": "anecdote",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Transamerica_Pyramid",
+          "says": "The tower drew planning-era resistance and earned the derisive nickname 'Pereira's Prick' from critics."
+        },
+        {
+          "source": "sftravel.com",
+          "url": "https://www.sftravel.com/article/everything-you-need-to-know-about-san-franciscos-transamerica-pyramid",
+          "says": "Its contentious build sparked public debate and protest flyers before eventually becoming a cherished landmark."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c5",
+      "text": "When finished in 1972, the 853-foot tower ranked as the tallest building west of Chicago and led San Francisco's skyline until 2017.",
+      "year": "1972",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Transamerica_Pyramid",
+          "says": "Completed in 1972 at 853 feet, it was Chicago-westward's tallest until 1974 and San Francisco's tallest until 2017."
+        },
+        {
+          "source": "sftravel.com",
+          "url": "https://www.sftravel.com/article/everything-you-need-to-know-about-san-franciscos-transamerica-pyramid",
+          "says": "Finished in 1972, the 48-story landmark currently stands as San Francisco's second-tallest skyscraper."
+        }
+      ],
+      "verdict": "disputed",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c6",
+      "text": "A time capsule buried in 1974 was unearthed fifty years later, revealing Mayor Joseph Alioto's audio message and an original Pisco Punch recipe.",
+      "year": "1974",
+      "kind": "anecdote",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "sftravel.com",
+          "url": "https://www.sftravel.com/article/everything-you-need-to-know-about-san-franciscos-transamerica-pyramid",
+          "says": "Opened after five decades, a 1974 capsule held protest flyers, Alioto's taped message, and a Pisco Punch recipe."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c7",
+      "text": "After Michael Shvo bought the tower in 2020 and hired Norman Foster to renovate its interiors, Yoda PLC acquired it by April 2026.",
+      "year": "2026",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Transamerica_Pyramid",
+          "says": "Shvo purchased the property in 2020, tapped Foster for 2022 renovations, and Yoda PLC acquired it by 2026."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    }
+  ],
+  "story": "Beneath your feet, this skyscraper rests on reclaimed land that once formed Yerba Buena Cove's shoreline, where American sailors landed in 1846. An earlier building stood here until razed for parking in 1959; historians disagree whether it was built in 1853 or 1854. Over its century-long lifespan, it hosted prominent lawyers, financiers, and celebrated creatives like Mark Twain and Frida Kahlo.\n\nLook up at that unusual tapered silhouette, built from 1969 to 1972 by architects William Pereira and Harry D. Som. Pereira and Transamerica CEO John Beckett chose it so natural sunlight could reach the streets below. Fierce public opposition greeted construction, with detractors distributing protest flyers and mockingly nicknaming it 'Pereira's Prick.' A time capsule buried in 1974 was unearthed fifty years later, revealing Mayor Joseph Alioto's audio message and an original Pisco Punch recipe. After Michael Shvo bought the tower in 2020 and hired Norman Foster to renovate its interiors, Yoda PLC acquired it by April 2026.",
+  "sources": [
+    {
+      "title": "Transamerica Pyramid",
+      "url": "https://en.wikipedia.org/wiki/Transamerica_Pyramid",
+      "source": "en.wikipedia.org",
+      "via": "Bright Data"
+    },
+    {
+      "title": "Everything You Need to Know About San Francisco's ...",
+      "url": "https://www.sftravel.com/article/everything-you-need-to-know-about-san-franciscos-transamerica-pyramid",
+      "source": "sftravel.com",
+      "via": "Bright Data"
+    }
+  ],
+  "createdAt": "2026-11-13T19:19:14.320Z"
+}

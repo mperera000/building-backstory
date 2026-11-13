@@ -1,0 +1,20 @@
+{
+  "name": "building-backstory",
+  "version": "1.0.0",
+  "description": "Point your phone at an SF building and hear its real, fact-checked story (Gemini + Bright Data + TypeSafe Jev)",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --env-file-if-exists=.env server.js",
+    "test": "node --test tests/*.test.js",
+    "golden": "node --env-file-if-exists=.env scripts/golden.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "^3.3.0",
+    "@sentry/node": "^11.12.0"
+  }
+}

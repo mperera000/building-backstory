@@ -1,0 +1,155 @@
+{
+  "building": {
+    "id": "palace-hotel",
+    "name": "Palace Hotel",
+    "address": "2 New Montgomery St, San Francisco"
+  },
+  "built": "1875 (original), 1909 (rebuilt)",
+  "architect": null,
+  "hook": "Rebuilt after the 1906 fire, this gilded landmark hosted royalty and presidents.",
+  "claims": [
+    {
+      "id": "c0",
+      "text": "Banker William Ralston financed the original hotel and drowned in San Francisco Bay after his bank collapsed two months before the October 1875 opening, leaving partner William Sharon in control.",
+      "year": "1875",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Palace_Hotel,_San_Francisco",
+          "says": "Ralston drowned after his bank failed in 1875, leaving Senator Sharon to take over the hotel."
+        }
+      ],
+      "verdict": "legend",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c1",
+      "text": "Upon opening in 1875, the original hotel featured a skylit central courtyard where horse-drawn carriages drove inside to drop off guests.",
+      "year": "1875",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "sfpalace.com",
+          "url": "https://www.sfpalace.com/history/",
+          "says": "Carriages entered from New Montgomery under opaque glass onto a marbled courtyard floor."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Palace_Hotel,_San_Francisco",
+          "says": "A seven-story skylighted Grand Court served as an indoor carriage entrance before becoming Palm Court."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c2",
+      "text": "Hawaiian King David Kalakaua fell into a coma in his Palace Hotel suite and died there in January 1891 after suffering a stroke in Santa Barbara.",
+      "year": "1891",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Palace_Hotel,_San_Francisco",
+          "says": "After a stroke in Santa Barbara, Hawaiian King Kalakaua returned to his suite and died in 1891."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c3",
+      "text": "Gutted by fire after the 1906 earthquake, the original building was replaced by a new structure that reopened in December 1909, though accounts differ on whether the original superstructure was reused or demolished.",
+      "year": "1906",
+      "kind": "fact",
+      "conflict": true,
+      "evidence": [
+        {
+          "source": "sfpalace.com",
+          "url": "https://www.sfpalace.com/history/",
+          "says": "Fire gutted the hotel in 1906, though its intact superstructure served as the foundation for the 1909 rebuild."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Palace_Hotel,_San_Francisco",
+          "says": "The 1875 hotel was demolished after being gutted by the 1906 fire, with a new building opening in 1909."
+        }
+      ],
+      "verdict": "disputed",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c4",
+      "text": "Maxfield Parrish's painting The Pied Piper was commissioned after the 1906 earthquake and has hung in the hotel's namesake bar since the 1909 reopening.",
+      "year": "1909",
+      "kind": "fact",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "sfpalace.com",
+          "url": "https://www.sfpalace.com/history/",
+          "says": "Commissioned after the 1906 quake, Maxfield Parrish's mural has hung in its namesake bar since 1909."
+        }
+      ],
+      "verdict": "verified",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c5",
+      "text": "When President Woodrow Wilson ended a 1919 League of Nations speech in the Garden Court with the word 'peace,' white doves were released indoors and proved difficult for staff to capture afterward.",
+      "year": "1919",
+      "kind": "anecdote",
+      "conflict": false,
+      "evidence": [
+        {
+          "source": "sfpalace.com",
+          "url": "https://www.sfpalace.com/history/",
+          "says": "At Wilson's 1919 League of Nations dinner, released doves flew into the Garden Court and bedeviled staff."
+        }
+      ],
+      "verdict": "legend",
+      "decidedBy": "TypeSafe Jev"
+    },
+    {
+      "id": "c6",
+      "text": "The hotel underwent a two-year restoration ending in 1991, though one account attributes it to 1989 earthquake damage while the other says it closed in January 1989 for seismic retrofitting.",
+      "year": "1989",
+      "kind": "fact",
+      "conflict": true,
+      "evidence": [
+        {
+          "source": "sfpalace.com",
+          "url": "https://www.sfpalace.com/history/",
+          "says": "Major damage from the 1989 earthquake forced a two-year restoration of the stained glass and marble."
+        },
+        {
+          "source": "en.wikipedia.org",
+          "url": "https://en.wikipedia.org/wiki/Palace_Hotel,_San_Francisco",
+          "says": "The hotel closed from January 1989 through April 1991 for a two-year renovation and seismic retrofit."
+        }
+      ],
+      "verdict": "disputed",
+      "decidedBy": "TypeSafe Jev"
+    }
+  ],
+  "story": "Look up at the Palace Hotel in front of you, and picture its 1875 opening, when horse-drawn carriages drove right inside to drop off guests in a skylit central courtyard. Later, Hawaiian King David Kalakaua fell into a coma in his suite here and died in January 1891 after suffering a stroke in Santa Barbara. After the 1906 earthquake, fire gutted the original building. A new structure reopened in December 1909, though historians disagree on whether the original superstructure was reused or demolished. Commissioned after the quake, Maxfield Parrish’s painting The Pied Piper has hung in the hotel’s namesake bar ever since that 1909 reopening. And before you head inside, the story goes that when President Woodrow Wilson ended a 1919 League of Nations speech in the Garden Court with the word \"peace,\" white doves were released indoors and proved quite difficult for staff to capture afterward!",
+  "sources": [
+    {
+      "title": "History - Palace Hotel San Francisco",
+      "url": "https://www.sfpalace.com/history/",
+      "source": "sfpalace.com",
+      "via": "Bright Data"
+    },
+    {
+      "title": "Palace Hotel, San Francisco",
+      "url": "https://en.wikipedia.org/wiki/Palace_Hotel,_San_Francisco",
+      "source": "en.wikipedia.org",
+      "via": "Bright Data"
+    }
+  ],
+  "createdAt": "2026-11-13T19:20:18.741Z"
+}
